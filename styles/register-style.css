@@ -2,10 +2,10 @@
 
     /* Center the log-in window */
     width: 400px;
-    height: 200px;
+    height: 400px;
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 35%;
     margin: -100px 0 0 -200px;
 
     background: #feccb1; /* Old browsers */
@@ -28,7 +28,7 @@
 
 #form {
     width: 370px;
-    height: 170px;
+    height: 350px;
     position: relative;
     top: 15px;
     left: 15px;
@@ -43,7 +43,7 @@
     box-shadow: inset 0 0 20px #ab6c00;
 }
 
-#username, #password {
+#username, #password,#email,#lastname,#birthday {
     display: block;
     font-family: 'Ubuntu Mono', sans-serif;
     font-size: 16px;

@@ -5,7 +5,7 @@
 var stompClient = null;
 
 function connect() {
-    var socket = new SockJS('http://localhost:8080/chat');
+    var socket = new SockJS('http://localhost:8080/Fiz/chat');
     stompClient = Stomp.over(socket);
     stompClient.connect({}, function (frame) {
         console.log('Connected: ' + frame);

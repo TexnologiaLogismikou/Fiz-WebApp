@@ -4,22 +4,25 @@
 
 
 function registerUser() {
+    var json = {
+        "username" : document.getElementById("username").value,
+        "password" : document.getElementById("password").value,
+        "last_name" : document.getElementById("lastname").value,
+        "email" : document.getElementById("email").value,
+        "birthday" : document.getElementById("birthday").value};
     $.ajax({
-
-        url  : "http://localhost:8080/register",
+        url  : "http://localhost:8080/Fiz/register",
         type : "post",
+        dataType: json,
+        contentType: "application/json;",
         crossDomain: true,
-        data : {
-            "username" : document.getElementById("username").value,
-            "password" : document.getElementById("username").value
-        },
-
+        data : JSON.stringify(json),
         success : function(str){
             alert(str)
         },
 
         error : function() {
-            alert("eroor");
+            alert("error");
         }
     })
 }
