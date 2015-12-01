@@ -1,0 +1,49 @@
+/*======================================================
+-----------------Add this in your HTML------------------
+<div id="top-bar"> </div>
+<div id="container"> </div>
+<div id="bottom-bar"> </div>
+========================================================*/
+
+html,body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#top-bar {
+    height: 34px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+
+    -webkit-box-shadow: 0 10px 25px #888888; /* Safari 3.1-5.0, Chrome 4.0-9.0 */
+    -moz-box-shadow: 0 10px 25px #888888; /* Firefox 3.5-4.0 */
+    box-shadow: 0 10px 25px #888888;
+}
+
+#bottom-bar {
+    height: 34px;
+    background: #222222;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+
+    -webkit-box-shadow: 0 -10px 25px #888888; /* Safari 3.1-5.0, Chrome 4.0-9.0 */
+    -moz-box-shadow: 0 -10px 25px #888888; /* Firefox 3.5-4.0 */
+    box-shadow: 0 -10px 25px #888888;
+}
+
+#container {
+    background: beige;
+    width: 100%;
+    position: absolute;
+    top: 34px;
+    bottom: 34px;
+    overflow-y: auto; /* scroll based on child height */
+}

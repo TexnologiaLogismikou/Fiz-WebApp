@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fiz Chat</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/sockjs/1.0.0/sockjs.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+    <script src="scripts/chat-script.js"></script>
+    <script src="scripts/navigator.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/chat-style.css">
+    <link rel="stylesheet" type="text/css" href="styles/navigator.css">
+    <link rel="stylesheet" type="text/css" href="styles/layout.css">
+</head>
+<body onload="connect(); navigator();" onclose="disconnect()">
+<div id="body-wrapper">
+    <div id="top-bar">
+        <div id="navigator"></div>
+    </div>
+    <div id="container">
+        <noscript>
+            <h1>
+                Seems your browser doesn't support Javascript!
+                Our web-app relies on Javascript being enabled.
+                Please enable Javascript and reload this page!
+            </h1>
+        </noscript>
+        <div id="messenger">
+            <div id="chat-wrapper">
+                <textarea id="text-area"></textarea><br/>
+                <input id="message" type="text" autocomplete="off" onkeypress="enterFunction(event)"/><button id="submit" onclick="sendMessage()">SEND</button>
+            </div>
+        </div>
+    </div>
+    <div id="bottom-bar"></div>
+</div>
+</body>
+</html>

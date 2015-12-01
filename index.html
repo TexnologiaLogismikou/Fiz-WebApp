@@ -3,12 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Fiz</title>
-    <script src="/scripts/jScrptTesting.js"></script>
-    <link rel="stylesheet" type="text/css" href="styles/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="scripts/navigator.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/index-style.css">
+    <link rel="stylesheet" type="text/css" href="styles/navigator.css">
+    <link rel="stylesheet" type="text/css" href="styles/layout.css">
 </head>
-<body>
+<body onload="navigator();">
 <div id="body-wrapper">
-    <h1>Hello World</h1>
+    <div id="top-bar">
+        <div id="navigator"></div>
+    </div>
+    <div id="container">
+        <h1>This is FIZ!!!</h1>
+    </div>
+    <div id="bottom-bar">
+    </div>
 </div>
 </body>
 </html>
