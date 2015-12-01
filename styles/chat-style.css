@@ -65,16 +65,11 @@
     position: relative;
     top: 32px;
     left: 30px;
-
     height: 30px;
     width: 491px;
-
-
-
     font-family: 'Ubuntu Mono' , sans-serif;
     font-size: 18px;
     color: #606060;
-    /*width: 210px;*/
     padding: 4px 10px;
     border: none;
 

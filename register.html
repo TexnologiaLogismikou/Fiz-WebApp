@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="scripts/navigator.js"></script>
+    <script src="scripts/register-script.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/navigator.css">
+    <link rel="stylesheet" type="text/css" href="styles/layout.css">
+    <link rel="stylesheet" type="text/css" href="styles/register-style.css">
+</head>
+<body onload="navigator();">
+<div id="body-wrapper">
+    <div id="top-bar">
+        <div id="navigator"></div>
+    </div>
+    <div id="container">
+        <div id="form-wrapper">
+            <form id="form">
+                <table>
+                    <tr>
+                        <label class="label">Username:</label>
+                        <input id="username" type="text"/>
+                    </tr>
+                    <tr>
+                        <label class="label">Password:</label>
+                        <input id="password" type="password"/>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input id="submit" type="button" onclick="registerUser()" value="register"/></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <div id="bottom-bar"></div>
+</div>
+</body>
+</html>
