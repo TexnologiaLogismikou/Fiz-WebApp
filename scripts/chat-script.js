@@ -27,11 +27,16 @@ function disconnect() {
 function sendMessage() {
     var message = document.getElementById('message').value;
 
-    if (person == "") {
-        alert("You didnt select an username");
-        location.reload();
-        return;
+    var username = popUp().toString();
+
+    if (/\S/.test(message)) {
+
     }
+    else {
+        alert("You didnt select an username");
+        window.location.href = "/index.html";
+    }
+
     if (/\S/.test(message)) {
         stompClient.send("/app/chat", {}, JSON.stringify(
             {
@@ -57,8 +62,9 @@ function enterFunction(e) {
 }
 
 function popUp() {
-    person = prompt("Please enter your username", "username")
+    var person = prompt("Please enter your username", "");
     if (person == "") {
-        person = prompt("You didn't select an username, try again!", "username")
+        person = prompt("You didn't select an username, try again!", "");
     }
+    return person;
 }
