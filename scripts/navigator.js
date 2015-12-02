@@ -10,7 +10,7 @@ function navigator() {
 
     /* -menu links- */
     var login = "<li></li><a href='#'>log in</a></li>";
-    var register = "<li><a href='#'>register</a></li>";
+    var register = "<li><a href='/register.html'>register</a></li>";
     var chat = "<li><a href='/chat.html'>chat</a></li>";
     var home = "<li><a href='/index.html'>home</a></li>";
     var profile = "<li><a href='#'>profile</a></li>";
@@ -24,7 +24,7 @@ function navigator() {
             login = "<li></li><a class='selected' href='#'>log in</a></li>";
             break;
         case "register.html":
-            register = "<li><a class='selected' href='#'>register</a></li>";
+            register = "<li><a class='selected' href='/register.html'>register</a></li>";
             break;
         case "chat.html":
             chat = "<li><a class='selected' href='/chat.html'>chat</a></li>";
