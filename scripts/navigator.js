@@ -9,7 +9,7 @@ function navigator() {
     console.log(page);
 
     /* -menu links- */
-    var login = "<li></li><a href='#'>log in</a></li>";
+    var login = "<li></li><a href='/login.html'>log in</a></li>";
     var register = "<li><a href='/register.html'>register</a></li>";
     var chat = "<li><a href='/chat.html'>chat</a></li>";
     var home = "<li><a href='/index.html'>home</a></li>";
@@ -21,7 +21,7 @@ function navigator() {
            home = "<li><a class='selected' href='/index.html'>home</a></li>";
             break;
         case "log-in.html":
-            login = "<li></li><a class='selected' href='#'>log in</a></li>";
+            login = "<li></li><a class='selected' href='/login.html'>log in</a></li>";
             break;
         case "register.html":
             register = "<li><a class='selected' href='/register.html'>register</a></li>";

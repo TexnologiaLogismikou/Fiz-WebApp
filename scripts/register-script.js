@@ -11,7 +11,7 @@ function registerUser() {
             "email" : document.getElementById("email").value,
             "birthday" : document.getElementById("birthday").value};
     $.ajax({
-        url  : "http://localhost:8080/Fiz/register",
+        url  : "http://83.212.105.54:8080/Fiz/register",
         type : "post",
         crossDomain: true,
 		contentType: "application/json;",
