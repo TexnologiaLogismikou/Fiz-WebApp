@@ -47,7 +47,7 @@ function showMessage(message, user, date) {
     document.getElementById('area-table').innerHTML += "<tr>" +
         "<td class='hello'><span class='chat-username'>" + user + ": </span>" +
         "<span class='chat-message'>" + message + "</span></td>" +
-        "<td class='date'>" + time + "</td>" +
+        "<td class='date'>" + date + "</td>" +
         "</tr>";
     $(".chat-username").css("color", randomColor);
 
