@@ -43,11 +43,14 @@ function sendMessage() {
 
 function showMessage(message, user, date) {
 
+    var dt = new Date();
+    var time = dt.getHours() + ":" + dt.getMinutes();
+
     message = message.trim();
     document.getElementById('area-table').innerHTML += "<tr>" +
         "<td class='hello'><span class='chat-username'>" + user + ": </span>" +
         "<span class='chat-message'>" + message + "</span></td>" +
-        "<td class='date'>date</td>" +
+        "<td class='date'>time</td>" +
         "</tr>";
     $(".chat-username").css("color", randomColor);
 }
