@@ -29,13 +29,18 @@
                 <div id="table-wrapper">
                     <table>
                         <tr>
-                            <td colspan="2"><textarea id="text-area" disabled></textarea></td>
+                            <td colspan="2">
+                                <div id="text-area">
+                                    <table id="area-table"></table>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                            <td><input class="input-chat" id="message" type="text" autocomplete="off"
-                                       onkeypress="enterFunction(event)"/></td>
                             <td>
-                                <button class="input-chat" id="submit" onclick="sendMessage()">SEND</button>
+                                <input id="message" type="text" autocomplete="off" onkeypress="enterFunction(event)"/>
+                            </td>
+                            <td>
+                                <button id="submit" onclick="sendMessage()">SEND</button>
                             </td>
                         </tr>
                     </table>

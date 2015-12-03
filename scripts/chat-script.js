@@ -4,6 +4,7 @@
 
 var stompClient = null;
 var person = "anonymous";
+var randomColor = "#ff0000";
 
 function connect() {
     var socket = new SockJS('http://83.212.105.54:8080/Fiz/chat');
@@ -11,7 +12,7 @@ function connect() {
     stompClient.connect({}, function (frame) {
         console.log('Connected: ' + frame);
         stompClient.subscribe('/topic/chat', function (chat) {
-            showMessage(JSON.parse(chat.body).message, JSON.parse(chat.body).user);
+            showMessage(JSON.parse(chat.body).message, JSON.parse(chat.body).user, JSON.parse(chat.body).date);
         });
     });
 }
@@ -40,9 +41,15 @@ function sendMessage() {
     textarea.scrollTop = textarea.scrollHeight;
 }
 
-function showMessage(message, user) {
+function showMessage(message, user, date) {
+
     message = message.trim();
-    document.getElementById('text-area').value += user + ": " + message + "\n";
+    document.getElementById('area-table').innerHTML += "<tr>" +
+        "<td class='hello'><span class='chat-username'>" + user + ": </span>" +
+        "<span class='chat-message'>" + message + "</span></td>" +
+        "<td class='date'>date</td>" +
+        "</tr>";
+    $(".chat-username").css("color", randomColor);
 }
 
 function enterFunction(e) {
@@ -59,4 +66,15 @@ function popUp() {
     while (!(/\S/.test(person))) {
         person = prompt("You didn't specify an username, please try again!", "");
     }
+
+    randomColor = getRandomColor();
+}
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF'.split('');
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color.toString();
 }

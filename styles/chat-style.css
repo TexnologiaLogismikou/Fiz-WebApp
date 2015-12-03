@@ -92,7 +92,7 @@
     right: 1px;
     height: 38px;
     width: 97px;
-    font-size: 18pt;
+    font-size: 16pt;
 
     font-family: Arial, sans-serif;
     font-weight: bold;
@@ -139,4 +139,36 @@ table {
     position: absolute;
     top: 30px;
     left: 30px;
+}
+
+/*-- TEXT AREA CSS TRICKS --*/
+
+#text-area {
+    height: 310px;
+    width: 610px;
+    overflow-y: scroll;
+}
+
+#text-area table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+#text-area td {
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.hello {
+    white-space: pre-wrap;
+}
+
+.date {
+    width: 65px;
+    font-size: 12px;
+    color: #8b8b8b;
+}
+
+.chat-username {
+    font-weight: bold;
 }
