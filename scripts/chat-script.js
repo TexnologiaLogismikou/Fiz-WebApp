@@ -3,7 +3,7 @@
  */
 
 var stompClient = null;
-var person;
+var person = "";
 
 function connect() {
     var socket = new SockJS('http://83.212.105:8080/Fiz/chat');
@@ -26,16 +26,6 @@ function disconnect() {
 
 function sendMessage() {
     var message = document.getElementById('message').value;
-
-    var username = popUp().toString();
-
-    if (/\S/.test(message)) {
-
-    }
-    else {
-        alert("You didnt select an username");
-        window.location.href = "/index.html";
-    }
 
     if (/\S/.test(message)) {
         stompClient.send("/app/chat", {}, JSON.stringify(
@@ -62,9 +52,15 @@ function enterFunction(e) {
 }
 
 function popUp() {
-    var person = prompt("Please enter your username", "");
+    person = prompt("Please enter your username", "");
     if (person == "") {
         person = prompt("You didn't select an username, try again!", "");
     }
-    return person;
+
+    if (/\S/.test(person)) {
+    }
+    else {
+        alert("You didnt select an username");
+        window.location.href = "/index.html";
+    }
 }
