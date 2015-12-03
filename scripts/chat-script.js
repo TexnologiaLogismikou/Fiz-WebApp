@@ -12,7 +12,7 @@ function connect() {
     stompClient.connect({}, function (frame) {
         console.log('Connected: ' + frame);
         stompClient.subscribe('/topic/chat', function (chat) {
-            showMessage(JSON.parse(chat.body).message, JSON.parse(chat.body).user, JSON.parse(chat.body).date);
+            showMessage(JSON.parse(chat.body).message, JSON.parse(chat.body).user, JSON.parse(chat.body).date, JSON.parse(chat.body).color);
         });
     });
 }
@@ -31,17 +31,15 @@ function sendMessage() {
     if (/\S/.test(message)) {
         stompClient.send("/app/chat", {}, JSON.stringify(
             {
-                'message': message,
-                'user': person
+                'message' : message,
+                'user' : person,
+                'color' : randomColor
             }));
     }
     document.getElementById('message').value = " ";
 }
 
-function showMessage(message, user, date) {
-
-    var dt = new Date();
-    var time = dt.getHours() + ":" + dt.getMinutes();
+function showMessage(message, user, date, color) {
 
     message = message.trim();
     document.getElementById('area-table').innerHTML += "<tr>" +
@@ -49,7 +47,7 @@ function showMessage(message, user, date) {
         "<span class='chat-message'>" + message + "</span></td>" +
         "<td class='date'>" + date + "</td>" +
         "</tr>";
-    $(".chat-username").css("color", randomColor);
+    $(".chat-username").css("color", color);
 
     var textarea = document.getElementById('text-area');
     textarea.scrollTop = textarea.scrollHeight;
