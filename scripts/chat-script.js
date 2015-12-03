@@ -53,4 +53,10 @@ function enterFunction(e) {
 
 function popUp() {
     person = prompt("Please enter your username", "");
+    if (person == null) {
+        person = "anonymous";
+    }
+    while (!(/\S/.test(person))) {
+        person = prompt("You didn't specify an username, please try again!", "");
+    }
 }
