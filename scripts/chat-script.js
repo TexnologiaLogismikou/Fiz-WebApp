@@ -35,10 +35,7 @@ function sendMessage() {
                 'user': person
             }));
     }
-
     document.getElementById('message').value = " ";
-    var textarea = document.getElementById('text-area');
-    textarea.scrollTop = textarea.scrollHeight;
 }
 
 function showMessage(message, user, date) {
@@ -53,6 +50,9 @@ function showMessage(message, user, date) {
         "<td class='date'>" + time + "</td>" +
         "</tr>";
     $(".chat-username").css("color", randomColor);
+
+    var textarea = document.getElementById('text-area');
+    textarea.scrollTop = textarea.scrollHeight;
 }
 
 function enterFunction(e) {
