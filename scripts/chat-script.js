@@ -7,7 +7,7 @@ var person = "anonymous";
 var randomColor = "#ff0000";
 
 function connect() {
-    var socket = new SockJS('http://83.212.105.54:8080/Fiz/chat');
+    var socket = new SockJS('http://localhost:8080/Fiz/chat');
     stompClient = Stomp.over(socket);
     stompClient.connect({}, function (frame) {
         console.log('Connected: ' + frame);
@@ -60,11 +60,12 @@ function enterFunction(e) {
 
 function popUp() {
     person = prompt("Please enter your username", "");
-    if (person == null) {
-        person = "anonymous";
-    }
     while (!(/\S/.test(person))) {
         person = prompt("You didn't specify an username, please try again!", "");
+    }
+
+    if (person == null) {
+        person = "anonymous";
     }
 
     randomColor = getRandomColor();
