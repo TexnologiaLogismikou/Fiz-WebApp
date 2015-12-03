@@ -40,14 +40,14 @@ function sendMessage() {
 }
 
 function showMessage(message, user, date, color) {
-
+    
     message = message.trim();
     document.getElementById('area-table').innerHTML += "<tr>" +
-        "<td class='hello'><span class='chat-username'>" + user + ": </span>" +
+        "<td class='hello'><span class='chat-" + user + "'>" + user + ": </span>" +
         "<span class='chat-message'>" + message + "</span></td>" +
         "<td class='date'>" + date + "</td>" +
         "</tr>";
-    $(".chat-username").css("color", color);
+    $(".chat-" + user).css("color", color);
 
     var textarea = document.getElementById('text-area');
     textarea.scrollTop = textarea.scrollHeight;
