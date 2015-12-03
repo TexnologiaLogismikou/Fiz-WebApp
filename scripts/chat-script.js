@@ -3,10 +3,10 @@
  */
 
 var stompClient = null;
-var person = "";
+var person = "anonymous";
 
 function connect() {
-    var socket = new SockJS('http://83.212.105:8080/Fiz/chat');
+    var socket = new SockJS('http://83.212.105.54:8080/Fiz/chat');
     stompClient = Stomp.over(socket);
     stompClient.connect({}, function (frame) {
         console.log('Connected: ' + frame);
@@ -53,14 +53,4 @@ function enterFunction(e) {
 
 function popUp() {
     person = prompt("Please enter your username", "");
-    if (person == "") {
-        person = prompt("You didn't select an username, try again!", "");
-    }
-
-    if (/\S/.test(person)) {
-    }
-    else {
-        alert("You didnt select an username");
-        window.location.href = "/index.html";
-    }
 }

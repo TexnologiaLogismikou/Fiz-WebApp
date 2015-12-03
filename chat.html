@@ -26,8 +26,20 @@
         </noscript>
         <div id="messenger">
             <div id="chat-wrapper">
-                <textarea id="text-area"></textarea><br/>
-                <input id="message" type="text" autocomplete="off" onkeypress="enterFunction(event)"/><button id="submit" onclick="sendMessage()">SEND</button>
+                <div id="table-wrapper">
+                    <table>
+                        <tr>
+                            <td colspan="2"><textarea id="text-area" disabled></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><input class="input-chat" id="message" type="text" autocomplete="off"
+                                       onkeypress="enterFunction(event)"/></td>
+                            <td>
+                                <button class="input-chat" id="submit" onclick="sendMessage()">SEND</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

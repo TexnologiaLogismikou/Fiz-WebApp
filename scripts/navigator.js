@@ -18,7 +18,7 @@ function navigator() {
     /* -set the selected link- */
     switch (page) {
         case "index.html":
-           home = "<li><a class='selected' href='/index.html'>home</a></li>";
+            home = "<li><a class='selected' href='/index.html'>home</a></li>";
             break;
         case "log-in.html":
             login = "<li></li><a class='selected' href='/login.html'>log in</a></li>";
