@@ -7,7 +7,7 @@ var person = "anonymous";
 var randomColor = "#ff0000";
 
 function connect() {
-    var socket = new SockJS('http://83.212.105.54:8080/Fiz/chat');
+    var socket = new SockJS('http://localhost:8080/chat');
     stompClient = Stomp.over(socket);
     stompClient.connect({}, function (frame) {
         console.log('Connected: ' + frame);
@@ -31,16 +31,16 @@ function sendMessage() {
     if (/\S/.test(message)) {
         stompClient.send("/app/chat", {}, JSON.stringify(
             {
-                'message' : message,
-                'user' : person,
-                'color' : randomColor
+                'message': message,
+                'user': person,
+                'color': randomColor
             }));
     }
     document.getElementById('message').value = " ";
 }
 
 function showMessage(message, user, date, color) {
-    
+
     message = message.trim();
     document.getElementById('area-table').innerHTML += "<tr>" +
         "<td class='hello'><span class='chat-" + user + "'>" + user + ": </span>" +
@@ -63,17 +63,16 @@ function enterFunction(e) {
 }
 
 function popUp() {
-    person = prompt("Please enter your username", "");
-    while (!(/\S/.test(person))) {
-        person = prompt("You didn't specify an username, please try again!", "");
+    if (getCookie('username') == '') {
+        person = "Anonymous"
     }
-
-    if (person == null) {
-        person = "anonymous";
+    else {
+        person = getCookie('username');
     }
 
     randomColor = getRandomColor();
 }
+
 
 function getRandomColor() {
     var letters = '0123456789ABCDEF'.split('');

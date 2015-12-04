@@ -8,8 +8,13 @@ function navigator() {
     var page = path.split("/").pop();
     console.log(page);
 
+
+
     /* -menu links- */
     var login = "<li></li><a href='/login.html'>log in</a></li>";
+    if (getCookie('username') != '') {
+        login = "<li></li><a  onclick='logout()'>log out</a></li>";
+    }
     var register = "<li><a href='/register.html'>register</a></li>";
     var chat = "<li><a href='/chat.html'>chat</a></li>";
     var home = "<li><a href='/index.html'>home</a></li>";
