@@ -12,12 +12,24 @@ function loginUser(){
         crossDomain: true,
         contentType: "application/json;",
         data : JSON.stringify(json),
-        success : function(str){
-            alert(str)
+
+        success : function(jsonObject){
+            if(JSON.parse(jsonObject).error == "success") {
+                var username = JSON.parse(jsonObject).username;
+                var role = JSON.parse(jsonObject).role;
+
+                document.cookie="username=" + username;
+                document.cookie="role=" + role;
+
+                alert("Log in Successful")
+            }
+            else {
+                alert("Log in failed")
+            }
         },
 
         error : function() {
-            alert("error");
+            alert("404");
         }
     });
 
