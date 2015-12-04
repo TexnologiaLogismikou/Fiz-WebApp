@@ -47,7 +47,10 @@ function showMessage(message, user, date, color) {
         "<span class='chat-message'>" + message + "</span></td>" +
         "<td class='date'>" + date + "</td>" +
         "</tr>";
-    $(".chat-" + user).css("color", color);
+
+    var userClass = $(".chat-" + user);
+    userClass.css("color", color);
+    userClass.css("font-weight", "bold");
 
     var textarea = document.getElementById('text-area');
     textarea.scrollTop = textarea.scrollHeight;
