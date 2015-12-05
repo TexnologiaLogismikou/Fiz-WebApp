@@ -7,7 +7,7 @@ var person = "anonymous";
 var randomColor = "#ff0000";
 
 function connect() {
-    var socket = new SockJS('http://83.212.105.54:8080/chat');
+    var socket = new SockJS('http://83.212.105.54:8080/Fiz/chat');
     stompClient = Stomp.over(socket);
     stompClient.connect({}, function (frame) {
         console.log('Connected: ' + frame);

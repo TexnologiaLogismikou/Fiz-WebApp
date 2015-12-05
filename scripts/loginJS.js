@@ -7,7 +7,7 @@ function loginUser(){
                 "password" : document.getElementById("password").value};
 
     $.ajax({
-        url  : "http://localhost:8080/login",
+        url  : "http://83.212.105.54:8080/Fiz/login",
         type : 'post',
         crossDomain: true,
         contentType: "application/json;",
