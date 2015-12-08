@@ -25,7 +25,7 @@ function loginUser(){
                 alert("Log in Successful")
             }
             else {
-                alert("Log in failed")
+                alert("Log in failed " + jsonObject.statusText + " " + jsonObject.error)
             }
         },
 
