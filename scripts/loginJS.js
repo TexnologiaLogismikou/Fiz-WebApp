@@ -22,10 +22,10 @@ function loginUser(){
                 document.cookie="username=" + username;
                 document.cookie="role=" + role;
 
-                alert("Log in Successful")
+                alert("Log in Successful");
             }
             else {
-                alert("Log in failed " + jsonObject.statusText + " " + jsonObject.error)
+                alert("Log in failed");
             }
         },
 
