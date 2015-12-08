@@ -3,8 +3,8 @@
  */
 
 function loginUser(){
-    var json = {"username" : document.getElementById("username").value,
-                "password" : document.getElementById("password").value};
+    var json = {"j_username" : document.getElementById("username").value,
+                "j_password" : document.getElementById("password").value};
 
     $.ajax({
         url  : "http://83.212.105.54:8080/Fiz/login",
