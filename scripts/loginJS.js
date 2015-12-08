@@ -29,8 +29,8 @@ function loginUser(){
             }
         },
 
-        error : function() {
-            alert("404");
+        error : function(response) {
+            alert("Error "+response.status);
         }
     });
 
