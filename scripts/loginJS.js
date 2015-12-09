@@ -6,9 +6,9 @@ function loginUser(){
     $.ajax({
         url  : "http://83.212.105.54:8080/Fiz/login",
         type : 'post',
-        crossDomain: true,
-        contentType: "application/json;",
-        accept: "application/json",
+        //crossDomain: true,
+        //contentType: "application/json;",
+        //accept: "application/json",
         data : {
             "j_username" : document.getElementById("username").value,
             "j_password" : document.getElementById("password").value
