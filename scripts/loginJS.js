@@ -2,39 +2,41 @@
  * Created by KuroiTenshi on 12/2/2015.
  */
 
+//var Session = {
+//    id : '${pageContext.session.id}',
+//    user : '${pageContext.request.remoteUser}'
+//};
+
 function loginUser(){
+
     $.ajax({
-        url  : "http://83.212.105.54:8080/Fiz/login",
+        url  : "http://83.212.105.54/Fiz/login",
         type : 'post',
-        //crossDomain: true,
+        crossDomain: true,
         //contentType: "application/json;",
         //accept: "application/json",
-        data : {
-            "j_username" : document.getElementById("username").value,
-            "j_password" : document.getElementById("password").value
+        data : $("#form").serialize(),
+
+        success : function(a,b,c){
+            document.cookie = a;
+            alert(a.status+" 1 "+ a+" 2 "+b+" 3 "+ c);
         },
 
-        success : function(jsonObject){
-            if(jsonObject.error == "success") {
-                var username = jsonObject.username;
-                var role = jsonObject.role;
-
-                document.cookie="username=" + username;
-                document.cookie="role=" + role;
-
-                alert("Log in Successful");
-            }
-            else {
-                alert("Log in failed");
-            }
-        },
-
-        error : function(response) {
-            alert("Error "+response.status);
+        error : function(response, b, c) {
+            alert("Error "+response.status+ " "+b+" "+c);
         }
     });
 
 }
+
+//function setCookie(name,value,expires,path,domain,secure) {
+//    var cookieString = name + "=" + escape(value) +
+//        ( (expires) ? ";expires=" + expires.toGMTString() : "") +
+//        ( (path) ? ";path=" + path : "") +
+//        ( (domain) ? ";domain=" + domain : "") +
+//        ( (secure) ? ";secure" : "");
+//    document.cookie = cookieString;
+//}
 
 function logout(){
     var cookies = document.cookie.split(";");
