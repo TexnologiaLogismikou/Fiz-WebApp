@@ -33,7 +33,7 @@ function sendMessage() {
             {
                 'message': message,
                 'user': person,
-                'chatroom_id':1
+                'chatroom_id':'1'
             }));
     }
     document.getElementById('message').value = " ";
@@ -49,7 +49,7 @@ function showMessage(message, user, date, color) {
         "</tr>";
 
     var userClass = $(".chat-" + user);
-    userClass.css("color", color);
+    //userClass.css("color", color);
     userClass.css("font-weight", "bold");
 
     var textarea = document.getElementById('text-area');
