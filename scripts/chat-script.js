@@ -33,7 +33,7 @@ function sendMessage() {
             {
                 'message': message,
                 'user': person,
-                'color': randomColor
+                'chatroom_id':1
             }));
     }
     document.getElementById('message').value = " ";
