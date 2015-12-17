@@ -8,8 +8,6 @@ function navigator() {
     var page = path.split("/").pop();
     console.log(page);
 
-
-
     /* -menu links- */
     var login = "<li></li><a href='/login.html'>log in</a></li>";
     if (getCookie('username') != '') {

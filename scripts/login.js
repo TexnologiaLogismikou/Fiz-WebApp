@@ -11,7 +11,8 @@ function loginUser() {
         data: $("#form").serialize(),
 
         success: function (response, status, xhr) {
-            alert(JSON.stringify(xhr));
+            alert("Log in successful");
+            window.location.href = "index.html";
         },
 
         error: function (response, b, c) {

@@ -3,20 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <title>Fiz</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="scripts/dialog.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+    <script src="scripts/cookie.js"></script>
     <script src="scripts/navigator.js"></script>
-    <link rel="stylesheet" type="text/css" href="styles/index-style.css">
+    <link rel="stylesheet" type="text/css" href="styles/index.css">
     <link rel="stylesheet" type="text/css" href="styles/navigator.css">
     <link rel="stylesheet" type="text/css" href="styles/layout.css">
-    <script src="scripts/cookie.js"></script>
 </head>
 <body onload="navigator();">
+
+<div id="dialog-form" title="Create new chat room">
+    <p class="validateTips">Fill in the form to create a chat room</p>
+
+    <form>
+        <fieldset>
+            <label for="room-name">Select chat room's name</label>
+            <input type="text" name="room-name" id="room-name" class="text ui-widget-content ui-corner-all">
+            <label for="range">Select the chatroom's range</label>
+            <input type="text" id="range" name="range" class="text ui-widget-content ui-corner-all">
+            <label for="password">Select chat room's password</label>
+            <input type="password" name="password" id="password" class="text ui-widget-content ui-corner-all">
+            <label for="privilege">Select the chatroom's privilege</label>
+            <select id="privilege" name="privilege">
+                <option value="public">Public</option>
+                <option value="private">Private</option>
+            </select>
+            <label for="access">Select the chatroom's access method</label>
+            <select id="access" name="access">
+                <option value="whitelist">WhiteList</option>
+                <option value="blacklist">BlackList</option>
+            </select>
+
+            <!-- Allow form submission with keyboard without duplicating the dialog button -->
+            <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+        </fieldset>
+    </form>
+</div>
 <div id="body-wrapper">
     <div id="top-bar">
         <div id="navigator"></div>
     </div>
     <div id="container">
-        <h1>This is FIZ!!!</h1>
+        <div id="main-wrapper">
+            <button id="create-user">Create new chat room</button>
+            <div id="chat"></div>
+        </div>
     </div>
     <div id="bottom-bar">
     </div>
